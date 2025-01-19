@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx8aka6k3gefs"]
+
+[ext_resource type="PackedScene" uid="uid://c6wirehh8vxyp" path="res://scenes/player.tscn" id="1_25mod"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="2_164je"]
+[ext_resource type="Texture2D" uid="uid://dkvde64yq4qep" path="res://images/black_box.png" id="2_r8q83"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ug1f"]
+size = Vector2(64, 64)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_25mod")]
+position = Vector2(170, 131)
+script = ExtResource("2_164je")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_1ug1f")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_r8q83")
