@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0b5nvq2a45ed"]
+[gd_scene load_steps=8 format=3 uid="uid://bt0cn0qtm5suw"]
 
-[ext_resource type="Texture2D" uid="uid://pta7m83f3mj5" path="res://spider.png" id="1_m45li"]
-[ext_resource type="PackedScene" uid="uid://dvppb1fv37wq" path="res://scenes/killzone.tscn" id="2_lys3l"]
+[ext_resource type="Texture2D" uid="uid://pta7m83f3mj5" path="res://images/spider.png" id="1_m45li"]
+[ext_resource type="Script" path="res://scripts/killzone.gd" id="1_ucxio"]
+[ext_resource type="PackedScene" uid="uid://bxmidxdvpbumm" path="res://scenes/killzone.tscn" id="2_lys3l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2ht8"]
 atlas = ExtResource("1_m45li")
@@ -36,6 +37,7 @@ autoplay = "default"
 frame_progress = 0.444529
 
 [node name="Killzone" parent="." instance=ExtResource("2_lys3l")]
+script = ExtResource("1_ucxio")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, 0.5)
