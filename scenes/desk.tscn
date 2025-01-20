@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccuw6py0k2iq0"]
+
+[ext_resource type="Texture2D" uid="uid://cok55o33nfwaj" path="res://Sprout Lands - Sprites - Basic pack/Characters/desk.png" id="1_a6738"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kgbt"]
+atlas = ExtResource("1_a6738")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4lt3"]
+atlas = ExtResource("1_a6738")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hbx4n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kgbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4lt3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyaxe"]
+size = Vector2(24, 13)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_w5kyy"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -15)
+sprite_frames = SubResource("SpriteFrames_hbx4n")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_uyaxe")
+
+[node name="MenuButton" type="MenuButton" parent="."]
+offset_left = -12.0
+offset_top = -30.0
+offset_right = 12.0
+toggle_mode = false
+item_count = 3
+popup/item_0/text = "Settings"
+popup/item_0/separator = true
+popup/item_1/text = "Fuck You Setting"
+popup/item_1/icon = SubResource("ViewportTexture_w5kyy")
+popup/item_1/checkable = 1
+popup/item_1/id = 1
+popup/item_2/text = "Stupid Setting"
+popup/item_2/checkable = 2
+popup/item_2/checked = true
+popup/item_2/id = 2

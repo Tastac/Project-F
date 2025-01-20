@@ -1,26 +1,24 @@
-[gd_scene load_steps=9 format=3 uid="uid://bt0cn0qtm5suw"]
+[gd_scene load_steps=7 format=3 uid="uid://b0b5nvq2a45ed"]
 
-[ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_ipp7q"]
-[ext_resource type="Texture2D" uid="uid://pta7m83f3mj5" path="res://images/spider.png" id="1_m45li"]
-[ext_resource type="Script" path="res://scripts/killzone.gd" id="1_ucxio"]
-[ext_resource type="PackedScene" uid="uid://bxmidxdvpbumm" path="res://scenes/killzone.tscn" id="2_lys3l"]
+[ext_resource type="Texture2D" uid="uid://pta7m83f3mj5" path="res://images/spider.png" id="1_5wr01"]
+[ext_resource type="PackedScene" uid="uid://dvppb1fv37wq" path="res://scenes/killzone.tscn" id="2_lys3l"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d2ht8"]
-atlas = ExtResource("1_m45li")
+[sub_resource type="AtlasTexture" id="AtlasTexture_rax6u"]
+atlas = ExtResource("1_5wr01")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8lapt"]
-atlas = ExtResource("1_m45li")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kavd"]
+atlas = ExtResource("1_5wr01")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kjdbr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d2ht8")
+"texture": SubResource("AtlasTexture_rax6u")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8lapt")
+"texture": SubResource("AtlasTexture_2kavd")
 }],
 "loop": true,
 "name": &"default",
@@ -31,7 +29,6 @@ animations = [{
 size = Vector2(14, 9)
 
 [node name="Enemy" type="Node2D"]
-script = ExtResource("1_ipp7q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kjdbr")
@@ -39,7 +36,6 @@ autoplay = "default"
 frame_progress = 0.444529
 
 [node name="Killzone" parent="." instance=ExtResource("2_lys3l")]
-script = ExtResource("1_ucxio")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, 0.5)
