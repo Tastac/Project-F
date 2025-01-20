@@ -13,7 +13,6 @@ config_version=5
 config/name="Project-F"
 run/main_scene="res://scenes/game_level.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://images/icon.svg"
 
 [dotnet]
 
@@ -47,3 +46,4 @@ down={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.0562916, 0.0562916, 0.0562916, 1)

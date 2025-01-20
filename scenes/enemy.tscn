@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bt0cn0qtm5suw"]
+[gd_scene load_steps=9 format=3 uid="uid://bt0cn0qtm5suw"]
 
+[ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_ipp7q"]
 [ext_resource type="Texture2D" uid="uid://pta7m83f3mj5" path="res://images/spider.png" id="1_m45li"]
 [ext_resource type="Script" path="res://scripts/killzone.gd" id="1_ucxio"]
 [ext_resource type="PackedScene" uid="uid://bxmidxdvpbumm" path="res://scenes/killzone.tscn" id="2_lys3l"]
@@ -30,6 +31,7 @@ animations = [{
 size = Vector2(14, 9)
 
 [node name="Enemy" type="Node2D"]
+script = ExtResource("1_ipp7q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kjdbr")
