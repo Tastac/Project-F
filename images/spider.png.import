@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m4u0diwkkka5"
-path="res://.godot/imported/spr_tile_floor_and_walls.png-8294e9a4b9dbeaf9cb5dff82cd4af8b6.ctex"
+uid="uid://pta7m83f3mj5"
+path="res://.godot/imported/spider.png-0ba82c32b4070b91aba503676a7de7dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spr_tile_floor_and_walls.png"
-dest_files=["res://.godot/imported/spr_tile_floor_and_walls.png-8294e9a4b9dbeaf9cb5dff82cd4af8b6.ctex"]
+source_file="res://images/spider.png"
+dest_files=["res://.godot/imported/spider.png-0ba82c32b4070b91aba503676a7de7dd.ctex"]
 
 [params]
 
