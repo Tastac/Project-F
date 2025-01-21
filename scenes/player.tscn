@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://3mv7nbujghsd"]
 
-[ext_resource type="Texture2D" uid="uid://cwjjagoq58nv7" path="res://Sprout Lands - Sprites - Basic pack/Characters/Ferrofluid.png" id="2_cuf5d"]
+[ext_resource type="Texture2D" uid="uid://cwjjagoq58nv7" path="res://images/Ferrofluid.png" id="2_cuf5d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vlfeu"]
 size = Vector2(10, 10)

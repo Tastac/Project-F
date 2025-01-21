@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://cf0r4svfjfc7k"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_503mx"]
-[ext_resource type="Texture2D" uid="uid://cwjjagoq58nv7" path="res://Sprout Lands - Sprites - Basic pack/Characters/Ferrofluid.png" id="2_cuf5d"]
+[ext_resource type="Texture2D" uid="uid://cwjjagoq58nv7" path="res://images/Ferrofluid.png" id="2_cuf5d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vlfeu"]
 size = Vector2(10, 10)
@@ -175,6 +175,7 @@ graph_offset = Vector2(-149, 3)
 script = ExtResource("1_503mx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 5
 position = Vector2(0.0972222, 0)
 scale = Vector2(0.987847, 1)
 texture = ExtResource("2_cuf5d")

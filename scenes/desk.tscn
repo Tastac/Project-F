@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ccuw6py0k2iq0"]
 
-[ext_resource type="Texture2D" uid="uid://cok55o33nfwaj" path="res://Sprout Lands - Sprites - Basic pack/Characters/desk.png" id="1_a6738"]
+[ext_resource type="Texture2D" uid="uid://cok55o33nfwaj" path="res://images/desk.png" id="1_a6738"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3kgbt"]
 atlas = ExtResource("1_a6738")
@@ -25,12 +25,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyaxe"]
-size = Vector2(24, 13)
+size = Vector2(24, 30)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_w5kyy"]
 
 [node name="RigidBody2D" type="RigidBody2D"]
-gravity_scale = 0.0
+mass = 0.288
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -15)
@@ -38,7 +38,7 @@ sprite_frames = SubResource("SpriteFrames_hbx4n")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6.5)
+position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_uyaxe")
 
 [node name="MenuButton" type="MenuButton" parent="."]

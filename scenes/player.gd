@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-@export var move_speed : float = 100
+@export var move_speed : float = 200
 @export var starting_direction : Vector2 = Vector2(0, 1)
+const JUMP_VELOCITY = -400.0
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
@@ -9,7 +10,16 @@ extends CharacterBody2D
 func _ready():
 	update_animation_parameters(starting_direction)
 
-func _physics_process(_delta):
+func _physics_process(delta: float) -> void:
+	
+		# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
 	
 	var input_direction = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
@@ -18,8 +28,11 @@ func _physics_process(_delta):
 	
 	update_animation_parameters(input_direction)
 	
-	velocity = input_direction * move_speed
-	
+	var direction := Input.get_axis("left", "right")
+	if direction:
+		velocity.x = direction * move_speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, move_speed)
 	
 	move_and_slide()
 	
