@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b0b5nvq2a45ed"]
 
 [ext_resource type="Texture2D" uid="uid://pta7m83f3mj5" path="res://images/spider.png" id="1_5wr01"]
-[ext_resource type="PackedScene" uid="uid://dvppb1fv37wq" path="res://scenes/killzone.tscn" id="2_lys3l"]
+[ext_resource type="Script" path="res://scripts/killzone.gd" id="3_3j0tm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rax6u"]
 atlas = ExtResource("1_5wr01")
@@ -25,8 +25,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejax4"]
-size = Vector2(14, 9)
+[sub_resource type="CircleShape2D" id="CircleShape2D_b6cks"]
+radius = 7.07107
 
 [node name="Enemy" type="Node2D"]
 
@@ -35,8 +35,10 @@ sprite_frames = SubResource("SpriteFrames_kjdbr")
 autoplay = "default"
 frame_progress = 0.444529
 
-[node name="Killzone" parent="." instance=ExtResource("2_lys3l")]
+[node name="killzone" type="Area2D" parent="."]
+script = ExtResource("3_3j0tm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_ejax4")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+shape = SubResource("CircleShape2D_b6cks")
+
+[node name="Timer" type="Timer" parent="killzone"]
