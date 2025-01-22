@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=7 format=3 uid="uid://dh367plq8lnoq"]
 
 [ext_resource type="PackedScene" uid="uid://cf0r4svfjfc7k" path="res://scenes/player (2).tscn" id="1_8yos3"]
@@ -7,6 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://dvppb1fv37wq" path="res://scenes/killzone.tscn" id="5_by0f8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k3nau"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://dh367plq8lnoq"]
+
+[ext_resource type="PackedScene" uid="uid://3mv7nbujghsd" path="res://scenes/player.tscn" id="4_7d7i1"]
+[ext_resource type="PackedScene" uid="uid://ccuw6py0k2iq0" path="res://scenes/desk.tscn" id="4_30dnt"]
+[ext_resource type="TileSet" uid="uid://dknibctlfwwtl" path="res://images/game_level_tileset.tres" id="4_hnoxp"]
+[ext_resource type="PackedScene" uid="uid://b0b5nvq2a45ed" path="res://scenes/enemy.tscn" id="4_mxjub"]
+>>>>>>> Stashed changes
 
 [node name="GameLevel" type="Node2D"]
 
@@ -34,12 +43,26 @@ position = Vector2(0, 13)
 tile_map_data = PackedByteArray(0, 0, 4, 0, 254, 255, 1, 0, 1, 0, 5, 0, 0, 0, 3, 0, 254, 255, 1, 0, 0, 0, 5, 0, 0, 0, 5, 0, 254, 255, 1, 0, 2, 0, 5, 0, 0, 0)
 tile_set = ExtResource("4_hnoxp")
 
+<<<<<<< Updated upstream
 [node name="Killzone" parent="." instance=ExtResource("5_by0f8")]
+=======
+[node name="Desk" parent="." instance=ExtResource("4_30dnt")]
+position = Vector2(-90, -69)
+gravity_scale = 0.0
+
+[node name="Player" parent="." instance=ExtResource("4_7d7i1")]
+motion_mode = 0
+>>>>>>> Stashed changes
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(1, 109)
 shape = SubResource("WorldBoundaryShape2D_k3nau")
 
+<<<<<<< Updated upstream
 [node name="Player" parent="Killzone" instance=ExtResource("1_8yos3")]
 visibility_layer = 4
 position = Vector2(0, -109)
+=======
+[node name="Enemy" parent="." instance=ExtResource("4_mxjub")]
+position = Vector2(-68, -1)
+>>>>>>> Stashed changes

@@ -25,7 +25,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyaxe"]
-size = Vector2(24, 30)
+size = Vector2(24, 13)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_w5kyy"]
 
@@ -38,7 +38,7 @@ sprite_frames = SubResource("SpriteFrames_hbx4n")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -15)
+position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_uyaxe")
 
 [node name="MenuButton" type="MenuButton" parent="."]
