@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://d3t6b4t0thbhq"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://dknibctlfwwtl"]
 
 [ext_resource type="Texture2D" uid="uid://ylfahwacrm83" path="res://images/Facility_Base.png" id="1_7hlxl"]
 [ext_resource type="Texture2D" uid="uid://bu0qrhckbqxjh" path="res://images/Facility_Decor.png" id="2_1iddq"]
@@ -7,8 +7,11 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a7gib"]
 texture = ExtResource("1_7hlxl")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.92, -5.12, 8, -5.12, 8, 3.84, 0.96, 3.84, 0.96, 8, -1.92, 8)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.12, 8, -5.12, 8, 3.84, -8, 3.84)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.8, 1.92, -4.8, 1.92, 8, -0.96, 8, -0.96, 3.84, -8, 3.84)
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
@@ -19,22 +22,19 @@ texture = ExtResource("1_7hlxl")
 10:0/0 = 0
 11:0/0 = 0
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.92, -8, 0.96, -8, 0.96, 8, -1.92, 8)
 1:1/0 = 0
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.96, -8, 1.92, -8, 1.92, 8, -0.96, 8)
 6:1/0 = 0
 7:1/0 = 0
 8:1/0 = 0
 0:2/0 = 0
-<<<<<<< Updated upstream
-1:2/0 = 0
-2:2/0 = 0
-=======
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.92, 4.8, 8, 4.8, 8, -4.16, 0.96, -4.16, 0.96, -8, -1.92, -8)
 1:2/0 = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.16, -8, 4.8, 8, 4.8, 8, -4.16)
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.8, 8, 4.8, 8, -4.16, -8, -4.16)
 2:2/0 = 0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.96, -4.16, -8, -4.16, -8, 4.8, 1.92, 4.8, 1.92, -4.16, 1.92, -8, -0.96, -8)
->>>>>>> Stashed changes
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.16, -8, 4.8, 1.92, 4.8, 1.92, -8, -0.96, -8, -0.96, -4.16)
 6:2/0 = 0
 7:2/0 = 0
 8:2/0 = 0
@@ -175,7 +175,8 @@ texture = ExtResource("3_66tdq")
 7:8/0 = 0
 
 [resource]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_a7gib")
 sources/1 = SubResource("TileSetAtlasSource_fdnqr")
 sources/2 = SubResource("TileSetAtlasSource_h5whf")
