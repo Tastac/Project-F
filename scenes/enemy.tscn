@@ -1,12 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://b0b5nvq2a45ed"]
 
-[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_4yt1m"]
 [ext_resource type="Texture2D" uid="uid://pta7m83f3mj5" path="res://images/spider.png" id="1_5wr01"]
-<<<<<<< Updated upstream
-[ext_resource type="PackedScene" uid="uid://dvppb1fv37wq" path="res://scenes/killzone.tscn" id="2_lys3l"]
-=======
-[ext_resource type="PackedScene" uid="uid://ctfwci2mo66g3" path="res://scenes/killzone.tscn" id="2_882x8"]
->>>>>>> Stashed changes
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_hsh3r"]
+[ext_resource type="Script" path="res://scripts/killzone.gd" id="3_3j0tm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rax6u"]
 atlas = ExtResource("1_5wr01")
@@ -30,34 +26,21 @@ animations = [{
 "speed": 10.0
 }]
 
-<<<<<<< Updated upstream
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejax4"]
-=======
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtjiu"]
->>>>>>> Stashed changes
-size = Vector2(14, 9)
+[sub_resource type="CircleShape2D" id="CircleShape2D_b6cks"]
+radius = 7.07107
 
 [node name="Enemy" type="Node2D"]
-script = ExtResource("1_4yt1m")
+script = ExtResource("1_hsh3r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kjdbr")
 autoplay = "default"
 frame_progress = 0.444529
 
-<<<<<<< Updated upstream
-[node name="Killzone" parent="." instance=ExtResource("2_lys3l")]
+[node name="killzone" type="Area2D" parent="."]
+script = ExtResource("3_3j0tm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_ejax4")
-=======
-[node name="Killzone" parent="." instance=ExtResource("2_882x8")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+shape = SubResource("CircleShape2D_b6cks")
 
-<<<<<<< Updated upstream
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-shape = SubResource("RectangleShape2D_rtjiu")
->>>>>>> Stashed changes
-=======
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
->>>>>>> Stashed changes
