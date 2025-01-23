@@ -173,6 +173,7 @@ graph_offset = Vector2(-149, 3)
 [node name="Player" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(0.0972222, 0)
 scale = Vector2(0.987847, 1)
 texture = ExtResource("2_cuf5d")

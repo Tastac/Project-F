@@ -54,6 +54,10 @@ shape = SubResource("RectangleShape2D_ejax4")
 =======
 [node name="Killzone" parent="." instance=ExtResource("2_882x8")]
 
+<<<<<<< Updated upstream
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("RectangleShape2D_rtjiu")
+>>>>>>> Stashed changes
+=======
+[connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 >>>>>>> Stashed changes
