@@ -176,6 +176,7 @@ motion_mode = 1
 script = ExtResource("1_txkye")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(0.0972222, 0)
 scale = Vector2(0.987847, 1)
 texture = ExtResource("2_cuf5d")

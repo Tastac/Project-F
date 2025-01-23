@@ -1,10 +1,9 @@
 extends Area2D
 
-@onready var timer: Timer = $Timer
-
 func _on_body_entered(body: CharacterBody2D) -> void:
+<<<<<<< Updated upstream
+	print("You Died!")
+=======
 	print("You have Died")
-	timer.start()
-
-func _on_timer_timeout() -> void:
+>>>>>>> Stashed changes
 	get_tree().reload_current_scene()
