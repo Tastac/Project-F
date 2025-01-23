@@ -1,27 +1,12 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=7 format=3 uid="uid://dh367plq8lnoq"]
+[gd_scene load_steps=5 format=4 uid="uid://dinsa5e2x7lwb"]
 
-[ext_resource type="PackedScene" uid="uid://cf0r4svfjfc7k" path="res://scenes/player (2).tscn" id="1_8yos3"]
 [ext_resource type="PackedScene" uid="uid://b0b5nvq2a45ed" path="res://scenes/enemy.tscn" id="3_xhwcy"]
-[ext_resource type="PackedScene" uid="uid://ccuw6py0k2iq0" path="res://scenes/desk.tscn" id="4_30dnt"]
-[ext_resource type="TileSet" uid="uid://d3t6b4t0thbhq" path="res://images/game_level_tileset.tres" id="4_hnoxp"]
-[ext_resource type="PackedScene" uid="uid://dvppb1fv37wq" path="res://scenes/killzone.tscn" id="5_by0f8"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k3nau"]
-=======
-[gd_scene load_steps=5 format=3 uid="uid://dh367plq8lnoq"]
-
 [ext_resource type="PackedScene" uid="uid://3mv7nbujghsd" path="res://scenes/player.tscn" id="4_7d7i1"]
 [ext_resource type="PackedScene" uid="uid://ccuw6py0k2iq0" path="res://scenes/desk.tscn" id="4_30dnt"]
 [ext_resource type="TileSet" uid="uid://dknibctlfwwtl" path="res://images/game_level_tileset.tres" id="4_hnoxp"]
-[ext_resource type="PackedScene" uid="uid://b0b5nvq2a45ed" path="res://scenes/enemy.tscn" id="4_mxjub"]
->>>>>>> Stashed changes
 
 [node name="GameLevel" type="Node2D"]
 
-<<<<<<< Updated upstream
-[node name="Camera2D" type="Camera2D" parent="."]
-=======
 [node name="Player" parent="." instance=ExtResource("4_7d7i1")]
 z_index = 1
 collision_layer = 3
@@ -30,19 +15,19 @@ motion_mode = 0
 platform_floor_layers = 4294967294
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
->>>>>>> Stashed changes
 zoom = Vector2(3, 3)
+position_smoothing_enabled = true
 
 [node name="Enemy" parent="." instance=ExtResource("3_xhwcy")]
+z_index = 1
 position = Vector2(-73, 0)
 
 [node name="Desk" parent="." instance=ExtResource("4_30dnt")]
-position = Vector2(-99, -37)
+z_index = 1
+position = Vector2(-95, -37)
+gravity_scale = 0.0
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource("4_hnoxp")
-format = 2
-layer_0/tile_data = PackedInt32Array(131070, 2, 6, 131071, 65538, 6, 65536, 65538, 6, 65537, 131074, 6, 196607, 65538, 7, 262143, 65538, 7, 131072, 65538, 7, 196608, 65538, 7, 327679, 65538, 7, 393215, 65538, 7, 262144, 65538, 7, 327680, 65538, 7, 393216, 65538, 7, 458751, 65538, 7, 524287, 65538, 8, 458752, 65538, 8, 3, 196610, 6, 4, 262146, 6, 5, 327682, 6, 65540, 262146, 7, 131076, 262146, 7, 196612, 262146, 7, 262148, 262146, 7, 327684, 262146, 7, 393220, 262146, 7, 458756, 262146, 8, 65530, 393218, 6, 65531, 458754, 6, 65532, 524290, 6, 131067, 458754, 7, 196603, 458754, 7, 262139, 458754, 7, 327675, 458754, 7, 393211, 458754, 7, 458747, 458754, 7, 524283, 458754, 8, 327671, 2, 6, 327672, 65538, 6, 327673, 131074, 6, 393208, 65538, 7, 458744, 65538, 7, 524280, 65538, 8)
+[node name="TileMap" type="Node" parent="."]
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="TileMap"]
 tile_map_data = PackedByteArray("AAD4//z/AAAAAAAAAAD4/wMAAAAAAAIAAAAHAAMAAAACAAIAAAAHAPz/AAACAAAAAAAGAPz/AAABAAAAAAAFAPz/AAABAAAAAAAEAPz/AAABAAAAAAADAPz/AAABAAAAAAACAPz/AAABAAAAAAABAPz/AAABAAAAAAAAAPz/AAABAAAAAAD///z/AAABAAAAAAD+//z/AAABAAAAAAD9//z/AAABAAAAAAD8//z/AAABAAAAAAD7//z/AAABAAAAAAD6//z/AAABAAAAAAD5//z/AAABAAAAAAD4//3/AAAAAAEAAAD4//7/AAAAAAEAAAD4////AAAAAAEAAAD4/wAAAAAAAAEAAAD4/wEAAAAAAAEAAAD4/wIAAAAAAAEAAAD5/wMAAAABAAIAAAD6/wMAAAABAAIAAAD7/wMAAAABAAIAAAD8/wMAAAABAAIAAAD9/wMAAAABAAIAAAD+/wMAAAABAAIAAAD//wMAAAABAAIAAAAAAAMAAAABAAIAAAABAAMAAAABAAIAAAACAAMAAAABAAIAAAADAAMAAAABAAIAAAAEAAMAAAABAAIAAAAFAAMAAAABAAIAAAAGAAMAAAABAAIAAAAHAAIAAAACAAEAAAAHAAEAAAACAAEAAAAHAAAAAAACAAEAAAAHAP//AAACAAEAAAAHAP7/AAACAAEAAAAHAP3/AAACAAEAAAD5//3/AAABAAEAAAD5//7/AAABAAEAAAD5////AAABAAEAAAD5/wAAAAABAAEAAAD5/wEAAAABAAEAAAD5/wIAAAABAAEAAAD6/wIAAAABAAEAAAD7/wIAAAABAAEAAAD8/wIAAAABAAEAAAD9/wIAAAABAAEAAAD+/wIAAAABAAEAAAD//wIAAAABAAEAAAAAAAIAAAABAAEAAAABAAIAAAABAAEAAAACAAIAAAABAAEAAAADAAIAAAABAAEAAAAEAAIAAAABAAEAAAAFAAIAAAABAAEAAAAGAAIAAAABAAEAAAAGAAEAAAABAAEAAAAFAAEAAAABAAEAAAAEAAEAAAABAAEAAAADAAEAAAABAAEAAAACAAEAAAABAAEAAAABAAEAAAABAAEAAAAAAAEAAAABAAEAAAD//wEAAAABAAEAAAD+/wEAAAABAAEAAAD9/wEAAAABAAEAAAD9/wAAAAABAAEAAAD8/wAAAAABAAEAAAD8/wEAAAABAAEAAAD7/wEAAAABAAEAAAD6/wEAAAABAAEAAAD6/wAAAAABAAEAAAD7/wAAAAABAAEAAAD+/wAAAAABAAEAAAD//wAAAAABAAEAAAAAAAAAAAABAAEAAAABAAAAAAABAAEAAAACAAAAAAABAAEAAAADAAAAAAABAAEAAAAEAAAAAAABAAEAAAAFAAAAAAABAAEAAAAGAAAAAAABAAEAAAAGAP//AAABAAEAAAAFAP//AAABAAEAAAAEAP//AAABAAEAAAADAP//AAABAAEAAAACAP//AAABAAEAAAABAP//AAABAAEAAAAAAP//AAABAAEAAAD/////AAABAAEAAAD+////AAABAAEAAAD9////AAABAAEAAAD8////AAABAAEAAAD7////AAABAAEAAAD6////AAABAAEAAAD6//7/AAABAAEAAAD6//3/AAABAAEAAAD7//7/AAABAAEAAAD8//7/AAABAAEAAAD9//7/AAABAAEAAAD+//7/AAABAAEAAAD///7/AAABAAEAAAAAAP7/AAABAAEAAAABAP7/AAABAAEAAAACAP7/AAABAAEAAAADAP7/AAABAAEAAAAEAP7/AAABAAEAAAAFAP7/AAABAAEAAAAFAP3/AAABAAEAAAAGAP3/AAABAAEAAAAGAP7/AAABAAEAAAAEAP3/AAABAAEAAAADAP3/AAABAAEAAAACAP3/AAABAAEAAAABAP3/AAABAAEAAAAAAP3/AAABAAEAAAD///3/AAABAAEAAAD+//3/AAABAAEAAAD9//3/AAABAAEAAAD8//3/AAABAAEAAAD7//3/AAABAAEAAAA=")
@@ -50,37 +35,10 @@ tile_set = ExtResource("4_hnoxp")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMap"]
 position = Vector2(0, 6)
-tile_map_data = PackedByteArray(0, 0, 4, 0, 255, 255, 1, 0, 0, 0, 3, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAEAP//AQAAAAMAAAA=")
 tile_set = ExtResource("4_hnoxp")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="TileMap"]
 position = Vector2(0, 13)
-tile_map_data = PackedByteArray(0, 0, 4, 0, 254, 255, 1, 0, 1, 0, 5, 0, 0, 0, 3, 0, 254, 255, 1, 0, 0, 0, 5, 0, 0, 0, 5, 0, 254, 255, 1, 0, 2, 0, 5, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAEAP7/AQABAAUAAAADAP7/AQAAAAUAAAAFAP7/AQACAAUAAAA=")
 tile_set = ExtResource("4_hnoxp")
-<<<<<<< Updated upstream
-
-<<<<<<< Updated upstream
-[node name="Killzone" parent="." instance=ExtResource("5_by0f8")]
-=======
-[node name="Desk" parent="." instance=ExtResource("4_30dnt")]
-position = Vector2(-90, -69)
-gravity_scale = 0.0
-
-[node name="Player" parent="." instance=ExtResource("4_7d7i1")]
-motion_mode = 0
->>>>>>> Stashed changes
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(1, 109)
-shape = SubResource("WorldBoundaryShape2D_k3nau")
-
-<<<<<<< Updated upstream
-[node name="Player" parent="Killzone" instance=ExtResource("1_8yos3")]
-visibility_layer = 4
-position = Vector2(0, -109)
-=======
-[node name="Enemy" parent="." instance=ExtResource("4_mxjub")]
-position = Vector2(-68, -1)
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
