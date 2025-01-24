@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=4 uid="uid://gm8hkgoha6rb"]
+
+[ext_resource type="Script" path="res://scripts/room.gd" id="1_37f3f"]
+[ext_resource type="TileSet" uid="uid://dknibctlfwwtl" path="res://images/game_level_tileset.tres" id="1_mu6sx"]
+[ext_resource type="PackedScene" uid="uid://d3orftb4106jq" path="res://scenes/door.tscn" id="3_upi2w"]
+
+[node name="Room01" type="Node2D" node_paths=PackedStringArray("doors")]
+script = ExtResource("1_37f3f")
+doors = [NodePath("Doors/DoorTop1")]
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="DoorTop1" parent="Doors" instance=ExtResource("3_upi2w")]
+position = Vector2(0, -26)
+rotation = -3.14159
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAEAAAD/////AAABAAEAAAAAAP//AAABAAEAAAD+//7/AAAAAAAAAAABAP7/AAACAAAAAAABAAEAAAACAAIAAAD+/wEAAAAAAAIAAAD+/wAAAAAAAAEAAAD+////AAAAAAEAAAD///7/AAABAAAAAAAAAP7/AAABAAAAAAAAAAEAAAABAAIAAAD//wEAAAABAAIAAAD//wAAAAABAAEAAAABAAAAAAACAAEAAAABAP//AAACAAEAAAA=")
+tile_set = ExtResource("1_mu6sx")

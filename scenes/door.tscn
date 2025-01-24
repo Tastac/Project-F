@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d3orftb4106jq"]
+
+[node name="Door" type="Node2D"]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 3)

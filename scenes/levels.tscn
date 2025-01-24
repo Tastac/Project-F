@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://mtuv38bjvtqd"]
+
+[ext_resource type="Script" path="res://scripts/generate_rooms.gd" id="1_hjs0l"]
+[ext_resource type="PackedScene" uid="uid://3mv7nbujghsd" path="res://scenes/player.tscn" id="2_gmdmu"]
+
+[node name="Levels" type="Node2D"]
+script = ExtResource("1_hjs0l")
+
+[node name="Player" parent="." instance=ExtResource("2_gmdmu")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2.5, 2.5)
+position_smoothing_enabled = true
+
+[node name="Rooms" type="Node" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]

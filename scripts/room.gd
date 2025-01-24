@@ -1,11 +1,6 @@
-extends RigidBody2D
+extends Node2D
 
-var size
+@export var doors: Array[Node2D] = []
 
-func make_room(_pos, _size):
-	position = _pos
-	size = _size
-	var s = RectangleShape2D.new()
-	s.custom_solver_bias = 0.75
-	s.extents = size
-	$CollisionShape2D.shape = s
+func _ready():
+	print("Hello")
