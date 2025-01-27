@@ -1,7 +1,43 @@
-[gd_scene load_steps=25 format=3 uid="uid://3mv7nbujghsd"]
+[gd_scene load_steps=30 format=3 uid="uid://3mv7nbujghsd"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_txkye"]
-[ext_resource type="Texture2D" uid="uid://cwjjagoq58nv7" path="res://images/Ferrofluid.png" id="2_cuf5d"]
+[ext_resource type="Texture2D" uid="uid://b7f4embshtkeb" path="res://images/FerroSuit_Basic_Animation.png" id="2_3kj0d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itc0s"]
+atlas = ExtResource("2_3kj0d")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3alq"]
+atlas = ExtResource("2_3kj0d")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0f6g"]
+atlas = ExtResource("2_3kj0d")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y57j"]
+atlas = ExtResource("2_3kj0d")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5wy5l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itc0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3alq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0f6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8y57j")
+}],
+"loop": true,
+"name": &"suit_walk",
+"speed": 4.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vlfeu"]
 size = Vector2(10, 10)
@@ -13,85 +49,25 @@ length = 0.001
 resource_name = "Walk_right"
 length = 1.2
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [1, 2, 3]
-}
 
 [sub_resource type="Animation" id="Animation_ou8y1"]
 resource_name = "idle"
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 4]
-}
 
 [sub_resource type="Animation" id="Animation_aoirt"]
 resource_name = "walk_down"
 length = 1.2
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.00388968, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [8, 12, 16]
-}
 
 [sub_resource type="Animation" id="Animation_uht6k"]
 resource_name = "walk_left"
 length = 1.2
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [5, 6, 7]
-}
 
 [sub_resource type="Animation" id="Animation_rvtr6"]
 resource_name = "walk_up"
 length = 1.2
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [9, 13, 17]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dql7s"]
 _data = {
@@ -175,14 +151,13 @@ graph_offset = Vector2(-149, 3)
 motion_mode = 1
 script = ExtResource("1_txkye")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 1
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.0972222, 0)
 scale = Vector2(0.987847, 1)
-texture = ExtResource("2_cuf5d")
-hframes = 4
-vframes = 8
-frame = 4
+sprite_frames = SubResource("SpriteFrames_5wy5l")
+animation = &"suit_walk"
+frame = 2
+frame_progress = 0.287343
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_vlfeu")

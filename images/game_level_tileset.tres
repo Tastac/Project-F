@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://3jfs6h16hvrl" path="res://images/Terrain_Pipe_A.png" id="3_66tdq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a7gib"]
+resource_name = "Building"
 texture = ExtResource("1_7hlxl")
 0:0/next_alternative_id = 4
 0:0/0 = 0

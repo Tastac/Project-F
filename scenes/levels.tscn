@@ -7,9 +7,11 @@
 script = ExtResource("1_hjs0l")
 
 [node name="Player" parent="." instance=ExtResource("2_gmdmu")]
+z_index = 1
+scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(5, 5)
 position_smoothing_enabled = true
 
 [node name="Rooms" type="Node" parent="."]
